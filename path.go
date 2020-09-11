@@ -15,7 +15,7 @@ func NewPath(body string) *Path {
 	return &Path{body}
 }
 
-func (p *Path) Match(path string) (matched bool, params *map[string]string) {
+func (p *Path) Match(path string) (matched bool, params map[string]string) {
 	params = make(map[string]string)
 	pa := Split(([]byte)(p.body), []byte{'/'})
 	lenpa := len(pa)
